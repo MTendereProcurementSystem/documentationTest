@@ -98,7 +98,7 @@
         <div class="main">
             <h2 class="c236 c56" id="h.8sqtv5qmy3t8"><span>TITLE</span></h2>
             {% for page in site.pages %}
-            <p>{{page}}</p>
+            <p>{{page.title}}</p>
             {% endfor %}
             <hr>
         </div>
