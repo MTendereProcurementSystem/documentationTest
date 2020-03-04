@@ -1,3 +1,5 @@
+<html>
+<body>
 <div class="sidenav">
     <h1 id="h.aqvdwxcpbumt">Table of contents</span></h1>
         {% for p in site.pages %}
@@ -20,3 +22,5 @@
         });
     }
 </script>
+</body>
+</html>
