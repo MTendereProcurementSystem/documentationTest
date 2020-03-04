@@ -1,7 +1,9 @@
 <html>
+
     <head>
         <link rel="stylesheet" type="text/css" href="documentationStyles.css">
     </head>
+
     <body>
         <div class="sidenav">
             <h1 id="h.aqvdwxcpbumt">Table of contents</span></h1>
@@ -96,10 +98,835 @@
             </div>
         </div>
         <div class="main">
-            <h2 class="c236 c56" id="h.8sqtv5qmy3t8"><span>TITLE</span></h2>
-            {% for page in site.pages %}
-            <p>{{page.title}}</p>
-            {% endfor %}
+            <h2 class="c236 c56" id="h.8sqtv5qmy3t8"><span>Introduction</span></h2>
+
+            <h1 class="c34" id="h.gjdgxs">
+                <span class="c15">Introduction </span></h1>
+            <p class="c0" id="h.30j0zll"><span>The implementation of digital processes in the field of public
+                    procurement ensures improvement of the transparency and efficiency of procurement of goods, works
+                    and services and benefits all stakeholders of public procurement processes: the Government,
+                    business community and citizens who use public services. The development of a comprehensive
+                    electronic public procurement system provides, for digital and standardized procurement processes,
+                    a decrease in the time of the selling-buying cycle, encourages the participation in public tenders
+                    by suppliers, service providers and contractors and creates a transparent relationship between the
+                    Government and the local business community, small and medium-sized enterprises. </span></p>
+            <p class="c0"><span>The electronic public procurement forms an integral part of the electronic governance,
+                    as specified in the </span><span class="c18">Concept of Electronic Governance</span><span>,
+                    approved by </span><span class="c18">Governmental Decision no. 733 as of June 28, 2006</span><span
+                    class="c4">&nbsp;(Official Gazette of the Republic of Moldova, 2006, no.106-111, art.799) and
+                    envisaged by policies of the European Union.</span></p>
+            <p class="c0"><span>The experience of many governments globally proves that implementing modern public
+                    procurement policies can be best achieved by incorporating electronic public procurement procedures
+                    in local procurement practice and developing suitable electronic procurement (</span><span class="c18">eProcurement</span><span
+                    class="c4">) tools. Adopting an &lsquo;end-to-end&rsquo; digital public procurement process,
+                    covering web-based tools for procurement planning, tendering, contract management and reporting and
+                    market analysis, standardizes local procurement practices and makes conducting procurement easier
+                    for public and private process stakeholders as well as it generates benefits for public finance
+                    management.</span></p>
+            <p class="c0"><span>To enable a comprehensive implementation of the digital public procurement process in
+                    Moldova it is necessary to develop and to implement the MTender System - Networking Multi-Platform
+                </span><span class="c18">Electronic Public Procurement System </span><span class="c4">to support the
+                    entire public procurement cycle and to enable public procurement management as well as market
+                    analysis, monitoring and audit of public procurement function in the public sector in the Republic
+                    of Moldova. </span></p>
+            <p class="c0"><span class="c18">The MTender System </span><span class="c4">aims to support the entire
+                    procurement cycle, from procurement planning to the final payment for the completion of public
+                    contracts, and provides dedicated online purchasing tools, such as auctions, e-catalogues and
+                    framework agreements, to conduct electronically all public procurement in Moldova. </span></p>
+            <p class="c0"><span>The </span><span class="c18">MTender System</span><span>&rsquo;s functional
+                    specification is intended to support public and private purchasers (in particular </span><span
+                    class="c18">Contracting Authorities</span><span>&nbsp;and </span><span class="c18">Central
+                    Purchasing Bodies covered by public procurement law</span><span class="c4">), but also entities
+                    required or wishing to comply with transparency and competition standards of the Agreement on
+                    Government Procurement of the World Trade Organization.</span></p>
+            <p class="c0"><span>It supports monitoring, dedicated public procurement review and remedies mechanisms, as
+                    well as it provides access to public procurement information to general public and civil society
+                    achieved by the integration of </span><span class="c18">Open Contracting Data Standards</span><span
+                    class="c4">.</span></p>
+            <p class="c0"><span>The Technical Specification describes the goals, key objectives and schedule of the
+                    digital public procurement cycle implementation in Moldova and presents legal, business and
+                    technology principles, as well as a planned scope and minimal functional and non-functional
+                    requirements of the MTender System.</span>
+                <hr style="page-break-before:always;display:none;">
+            </p>
+            <p class="c0 c1"><span class="c4"></span></p>
+            <h1 class="c34" id="h.wq0t8m4j9a78"><span class="c15">1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General
+                    approach</span></h1>
+            <p class="c0"><span class="c4">To ensure the attainment of the objectives set for the IT System, the
+                    following principles shall be considered while designing, developing and implementing the
+                    Architecture of the OCDS open source central unit of the electronic public procurement system.</span></p>
+            <ol class="c6 lst-kix_list_12-2 start" start="1">
+                <li class="c21">
+                    <h3 id="h.2bn6wsx" style="display:inline"><span class="c46">Multi-platform networking model</span></h3>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">Any system based on this architecture will consists of a CDU that
+                    communicates in real time with several NEPPs and external information systems (eGov services) that
+                    ensure complete digitization of public procurement procedures. CDU consolidates and distributes all
+                    data entered and generated by NEPPs, and performs all transactions, processes and functionalities
+                    of the lifecycle and the NEPPs are serve as a user-interface - frolm registration of user account,
+                    through UI for all transactions processes and functionalities of lifecycle, up to ability of
+                    end-users to use needed eGov Services.</span></p>
+            <ol class="c6 lst-kix_list_2-4 start" start="1">
+                <li class="c22">
+                    <h5 id="h.qsh70q" style="display:inline"><span class="c30 c18">End-to-end public procurement
+                            processes</span></h5>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">The functionalities of the system based on this architecture from CDU
+                    perspective will cover the entire procurement process, from procurement planning to billing and
+                    public procurement payments. Online tools will make the system easier for all end-users and will
+                    generate process improvements and significant benefits.</span></p>
+            <ol class="c6 lst-kix_list_2-4" start="2">
+                <li class="c22">
+                    <h5 id="h.3as4poj" style="display:inline"><span class="c30 c18">Interoperability with eGov Services</span></h5>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">This architecture designed to ensure interoperability with existing and
+                    future eGovernment services and local national public registers. This approach guarantees a modern
+                    and advanced eProcurement system with comprehensive functionalities, but without presenting huge
+                    risk or expense since eGovernment services have already been significantly developed in most
+                    countries.</span></p>
+            <ol class="c6 lst-kix_list_2-4" start="3">
+                <li class="c22">
+                    <h5 id="h.1pxezwc" style="display:inline"><span class="c18 c30">Open source, open data and open
+                            contracting data standards. </span></h5>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">This architecture designed for a stack of open-source technologies to foster
+                    transparency and accountability of public procurement by incorporating open data concept and
+                    Advanced Open Contracting Data Standards. Openness of data shall help building citizens&rsquo; and
+                    economic operators&rsquo; trust in the Government, in efficiency of public procurement management
+                    and discourage any corrupt practices. </span></p>
+            <ol class="c6 lst-kix_list_2-4" start="4">
+                <li class="c22">
+                    <h5 id="h.49x2ik5" style="display:inline"><span class="c30 c18">Split-level architecture</span></h5>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">Involves independent design of systems&rsquo; components in compliance with
+                    interface standards between levels, which facilitates future incorporation of new services,
+                    evolution of the different functionalities and, in general, scalability of the system.</span></p>
+            <ol class="c6 lst-kix_list_2-4" start="5">
+                <li class="c22">
+                    <h5 id="h.2p2csry" style="display:inline"><span class="c30 c18">Reliable data</span></h5>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">Any data shall be entered into the system through authorised and
+                    authenticated channels only.</span></p>
+            <ol class="c6 lst-kix_list_2-4" start="6">
+                <li class="c22">
+                    <h5 id="h.147n2zr" style="display:inline"><span class="c30 c18">Extensibility</span></h5>
+                </li>
+            </ol>
+            <p class="c0" id="h.3o7alnk"><span class="c4">Possibility to expand and supplement the system based on this
+                    Architecture with new functions or improve the existing ones.</span></p>
+            <ol class="c6 lst-kix_list_2-4" start="7">
+                <li class="c22">
+                    <h5 id="h.23ckvvd" style="display:inline"><span class="c30 c18">Additional features</span></h5>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">The following key features are applied for the development of the
+                    architecture of an Open Source Central Unit. These ensure that the architecture can be reusable in
+                    other context and implementing different technologies while guaranteeing the interoperability with
+                    other systems and being compliant with main standard regulations in public procurement.</span></p>
+            <p class="c0 c1"><span class="c4"></span></p><a id="t.10ff577c1a000d867439ccfee9982d6b3a5a0017"></a><a id="t.0"></a>
+            <table class="c55">
+                <tbody>
+                    <tr class="c73">
+                        <td class="c48" colspan="1" rowspan="1">
+                            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 100.11px; height: 93.50px;"><img
+                                        alt="" src="images/image5.png" style="width: 100.11px; height: 93.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                        <td class="c48" colspan="1" rowspan="1">
+                            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 90.50px; height: 90.50px;"><img
+                                        alt="" src="images/image4.png" style="width: 90.50px; height: 90.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                        <td class="c48" colspan="1" rowspan="1">
+                            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 100.12px; height: 85.50px;"><img
+                                        alt="" src="images/image2.png" style="width: 100.12px; height: 85.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                        <td class="c48" colspan="1" rowspan="1">
+                            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 97.50px; height: 91.81px;"><img
+                                        alt="" src="images/image13.png" style="width: 97.50px; height: 91.81px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                    </tr>
+                    <tr class="c35">
+                        <td class="c16" colspan="1" rowspan="1">
+                            <p class="c37"><span class="c2">Based on United Nations Commission on International Trade
+                                    Law on Public Procurement (UNCITRAL) (2011)</span></p>
+                        </td>
+                        <td class="c16" colspan="1" rowspan="1">
+                            <p class="c37"><span class="c2">Complies with the European legislation on Public
+                                    Procurement (e.g. &nbsp;2004/17/EC, 2004/18/EC and their amendments)</span></p>
+                        </td>
+                        <td class="c16" colspan="1" rowspan="1">
+                            <p class="c37"><span class="c2">Interoperable with existing official resources constituting
+                                    the EU Single Market of Public Procurement</span></p>
+                        </td>
+                        <td class="c16" colspan="1" rowspan="1">
+                            <p class="c7"><span class="c2">Maximum standardization of data according to international
+                                    and EU standards: ISO, OCDS, EDI, CEN, etc</span></p>
+                            <p class="c7"><span class="c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+                        </td>
+                    </tr>
+                    <tr class="c32">
+                        <td class="c48" colspan="1" rowspan="1">
+                            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 70.73px; height: 94.00px;"><img
+                                        alt="" src="images/image3.png" style="width: 70.73px; height: 94.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                        <td class="c48" colspan="1" rowspan="1">
+                            <p class="c0"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 88.27px; height: 91.00px;"><img
+                                        alt="" src="images/image6.png" style="width: 88.27px; height: 91.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                        <td class="c48" colspan="1" rowspan="1">
+                            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 110.50px; height: 74.20px;"><img
+                                        alt="" src="images/image7.png" style="width: 110.50px; height: 74.20px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                        <td class="c48" colspan="1" rowspan="1">
+                            <p class="c0"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 88.00px; height: 88.00px;"><img
+                                        alt="" src="images/image8.png" style="width: 88.00px; height: 88.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                    </tr>
+                    <tr class="c25">
+                        <td class="c16" colspan="1" rowspan="1">
+                            <p class="c37"><span class="c2">Fully open-sourced stack of frameworks of
+                                    multi-paradigmatic development tools and databases services, </span></p>
+                        </td>
+                        <td class="c16" colspan="1" rowspan="1">
+                            <p class="c37"><span class="c2">Complete independence from the hardware platforms and/or
+                                    structures of data-centers or virtual clouds</span></p>
+                            <p class="c37 c1"><span class="c2"></span></p>
+                        </td>
+                        <td class="c16" colspan="1" rowspan="1">
+                            <p class="c37"><span class="c2">Business-processes and workflows that are configured from
+                                    independent parameterized blocks</span></p>
+                        </td>
+                        <td class="c16" colspan="1" rowspan="1">
+                            <p class="c7"><span class="c2">Reconfigurable in attend to the needs of CAs in a flexible,
+                                    efficient and customised manner for local or international level</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ol class="c6 lst-kix_list_12-2" start="2">
+                <li class="c21">
+                    <h3 id="h.ihv636" style="display:inline"><span class="c5">eProcurement.Systems API</span></h3>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">The eProcurement.Systems API is the only interface to Central Business
+                    Process Engine that is core unit of eProcurement.Systems infrastructure. The eProcurement.Systems
+                    API is a CQRS interface that provides programmatic access to BPE of the systems. It provides
+                    predictable URLs for accessing resources, and uses built-in HTTP features to receive commands and
+                    return responses. This makes it easy to communicate with. </span></p>
+            <p class="c0"><span class="c4">The API accepts JSON or form-encoded content in requests. It returns JSON
+                    content in all of its responses, including errors. Only the UTF-8 character encoding is supported
+                    for both requests and responses.</span></p>
+            <h1 class="c34" id="h.1fob9te"><span class="c15">1.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The
+                    Moldovan eProcurement scheme</span></h1>
+            <p class="c0"><span class="c4">The main pillars for the eProcurement reform in Moldova are the following:</span></p>
+            <p class="c67" id="h.3znysh7"><span class="c3">Figure 1. Main pillars of eProcurement reform for Moldova</span></p>
+            <p class="c0"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 378.07px; height: 308.73px;"><img
+                        alt="" src="images/image1.png" style="width: 378.07px; height: 308.73px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <ul class="c6 lst-kix_list_1-0 start">
+                <li class="c20"><span class="c5">Multi-platform networking model.</span><span class="c4">&nbsp;The
+                        eProcurement scheme will consist of the CDU networking in real time with a) several NEPPs and
+                        b) different eGovernment services to provide a complete electronic procurement service. A
+                        contemporary and business-friendly networking approach ensures a short implementation period,
+                        low development and maintenance costs and free-of-charge access to eProcurement services for
+                        contracting authorities. </span></li>
+                <li class="c20"><span class="c5">End-to-end electronic public procurement. </span><span class="c4">The
+                        eProcurement scheme will cover the entire public procurement process, from procurement planning
+                        to invoicing and payments under public contracts. Online tools for ePlanning, eTendering and
+                        eContract Management will make the system easier for all end-users and will generate process
+                        improvements and significant benefits for public finance management. </span></li>
+                <li class="c20"><span class="c5">Interoperable with eGovernment services.</span><span class="c4">&nbsp;The
+                        eProcurement system will be designed to ensure interoperability with existing and future
+                        eGovernment services and national public registers. This approach guarantees a modern advanced
+                        eProcurement system with comprehensive functionalities, but without presenting huge risk or
+                        expense since eGovernment services have already been significantly developed in Moldova.</span></li>
+                <li class="c20"><span class="c5">Open source, open data, open contracting data standard. </span><span
+                        class="c4">The CDU will be based on open source applications and foster transparency and
+                        accountability of public procurement by incorporating open data and Advanced Open Contracting
+                        Data Standards</span><sup class="c56 c10 c68"><a href="#ftnt1" id="ftnt_ref1">[1]</a></sup><span
+                        class="c4">. Transparency and openness of data shall help building citizens&rsquo; and economic
+                        operators&rsquo; trust in the Government, in efficiency of public procurement management and
+                        discourage any corrupt practices. </span></li>
+                <li class="c20"><span class="c5">Cost-efficient in implementation.</span><span class="c4">&nbsp;The
+                        eProcurement scheme development is seeking cost-efficiency through a) employing Open Source
+                        applications, b) the reuse of existing eGovernment tools and services c) taking on a
+                        sustainable business model based on users&rsquo; fees. The flat transaction fee model is
+                        adopted to align interest of the local business community and the Government and to achieve
+                        full sustainability of the MTender System in the long-term without jeopardising competition on
+                        the market of electronic procurement service providers.</span></li>
+            </ul>
+            <p class="c0"><span class="c4">The networking multi-platform model is based on a structure where the
+                    Central Database Unit, object of this Technical Specification, consolidates and distributes all
+                    data entered and generated by Networking Electronic Procurement Platforms, and performs the most
+                    sensitive transactions of the eProcurement lifecycle, such as electronic auctions. Both the Central
+                    Database Unit and the Networking Electronic Procurement Platforms must be compliant with EUPD 2014
+                    and with the requirements set by the GPA. </span></p>
+            <p class="c0"><span class="c4">The compliance requirements for the Central Database Unit of the MTender
+                    System are set out in this Technical Specification, while Networking Electronic Procurement
+                    Platforms will be required to undergo an accreditation process to ensure that they provide the
+                    services specified by the Moldovan government and also meet EU and GPA requirements. This process
+                    will require the definition of Service Level Agreements, compliance clauses, and requirements that
+                    Networking Electronic Procurement Platform operators must fulfil in order to provide eProcurement
+                    services to contracting authorities and economic operators.</span></p>
+            <p class="c0"><span class="c4">The interaction between the Central Database Unit of the MTender System and
+                    Networking Electronic Procurement Platforms is depicted in the diagram below:</span></p>
+            <p class="c1 c51"><span class="c3"></span></p>
+            <p class="c51 c1"><span class="c3"></span></p>
+            <p class="c51"><span class="c3">Figure 2 Indicative procurement lifecycle and platforms interaction</span></p>
+            <p class="c0"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 959.25px; height: 289.59px;"><img
+                        alt="" src="images/image10.png" style="width: 959.25px; height: 289.59px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c0 c1"><span class="c4"></span></p>
+            <p class="c0 c1"><span class="c4"></span></p>
+            <p class="c0"><span class="c4">The eProcurement scheme will also have additional modules to perform
+                    cross-functions such as registration of users, monitoring of data, etc.</span></p>
+            <p class="c1 c52"><span class="c4"></span></p>
+            <ol class="c6 lst-kix_list_2-1 start" start="1">
+                <li class="c11">
+                    <h2 id="h.2et92p0" style="display:inline"><span class="c45">MTender public procurement flow</span></h2>
+                </li>
+            </ol>
+            <p class="c33"><span class="c4">To implement the basic scenarios and system functions, the
+                    &lsquo;MTender&rsquo; system shall automate the entire procurement lifecycle (from planning to
+                    payment recording and contract completion) for all procurement methods defined in the national
+                    public procurement legislation.</span></p>
+            <p class="c33 c1"><span class="c4"></span></p>
+            <p class="c33"><span class="c4">Basic activities done under scenarios specific to public procurement are
+                    defined as follows: </span></p>
+            <p class="c1 c33"><span class="c4"></span></p>
+            <ol class="c6 lst-kix_list_6-0 start" start="1">
+                <li class="c0 c36"><span class="c4">Initiation of the procurement. At the initial stage, realized
+                        through the ePlanning module, which ensures the annual procurement planning activities, but
+                        also the individual planning (initiation) of the procurement procedure, the following
+                        activities will be carried out:</span></li>
+            </ol>
+            <ol class="c6 lst-kix_list_4-0 start" start="1">
+                <li class="c47 c53 c54"><span class="c4">Initiation of the procurement. The CA will draft, using the
+                        functionalities of ePlanning module and online workflows, a request for procurement based on
+                        their needs and indicating the available budget as well as the result of market consultations,
+                        when required. That request will be sent via the &lsquo;MTender&rsquo; system for validation
+                        with the Regional Treasury, if required by the law, to confirm budget availability for the
+                        specified procurement procedure;</span></li>
+                <li class="c47 c53 c54"><span class="c4">request for information/consultations. An offline process to
+                        request information from EOs and other stakeholders will be carried out by the CA in order to
+                        help in the drafting of the Tender Documents;</span></li>
+                <li class="c47 c53 c54"><span class="c4">drafting Tender Documents. An offline process to develop
+                        technical specifications and requirements for planned procurement which will then serve as the
+                        basis for preparing the contract notice;</span></li>
+                <li class="c47 c53 c54"><span class="c4">drafting Contract Notice. An online process by the CA for
+                        specifying detailed information on organized procurement, for potential economic operator
+                        participants using templates and forms in an online workflow in the &ldquo;MTender&rdquo;
+                        system. This step will be achieved through the eAccess module;</span></li>
+                <li class="c47 c53 c54"><span class="c4">publishing Contract Notice and Tender Documents. Using the
+                        eNotice module, finalised electronic documents covering Contract Notice and Tender Documents
+                        will be sent via the &lsquo;MTender&rsquo; system for publication on the Web Portal and
+                        Official Journal of the European Union (TED) as appropriate.</span></li>
+            </ol>
+            <ol class="c6 lst-kix_list_6-0" start="2">
+                <li class="c12 c36"><span class="c4">conduct of the procurement procedure, tender evaluation and
+                        conclusion of contract. This stage of the procurement procedure is carried out after the
+                        publication of the contract notice through the eSubmission module, which represents the flow of
+                        electronic processes for procurement procedures according to the public procurement method
+                        selected /purchasing technique, as prescribed in the PPL no. 131 of 03 July 2015. </span></li>
+            </ol>
+            <p class="c26"><span class="c4">In case of an individual contract, the eSubmission will start by enabling
+                    economic operators&rsquo; enquiries to the tender documents where the contracting authority will
+                    provide the necessary clarifications. After the tenderers&rsquo; registration to participate in the
+                    procurement procedure and online submission of tenders, the tenders will be evaluated by the
+                    contracting authority through the eEvaluation module and will be finalised by the publication of
+                    the award notice through eAwarding module, electronic signing of the contract and its registration
+                    at the Regional Treasury, if applicable.</span></p>
+            <ol class="c6 lst-kix_list_6-0" start="3">
+                <li class="c36 c69"><span class="c4">In case of an aggregated procurement under the framework
+                        agreement, the eSubmission will start by enabling enquiries to the tender documents and
+                        registration of tenderers to submit a request to participate in the framework agreement. Next,
+                        a submission of indicative tenders, their evaluation through eEvaluation module and awarding of
+                        framework agreement through eAwarding module will be enabled. This will be finalised by the
+                        publication of the award notice, electronic signing of the framework agreement and its
+                        registration at the Regional Treasury, if applicable. After this stage, the
+                        &lsquo;MTender&rsquo; system will provide the creation of an additional electronic workflow for
+                        the competition of the second stage under the multi-supplier framework agreement, which can be
+                        conducted as a request for quotation or electronic reverse auction (eAuction module).
+                        Specifically, the FA subsequent contract will be assigned in the second stage with repeated
+                        competition and the object of the subsequent contract will remain the same as prescribed in the
+                        FA concluded at the first stage. The subsequent contract resulting from the procedure will have
+                        a direct link to the FA from which it originated, thus recording all the contracts awarded
+                        under the framework agreement and the payments made; submission of complaints. The complaint
+                        mechanism from the eComplaint module ensures an online workflow for the submission of a
+                        complaint by the EO participating in the procurement, starting with the stage of publication of
+                        the contract notice for the public procurement procedure to the signing of the public
+                        procurement contract, including registration, examination and settlement of complaints by
+                        National Complaints Settlement Agency;</span></li>
+                <li class="c36 c64"><span class="c4">after the conclusion of the public procurement contract, at
+                        different times during the performance of the contract, operations for management of public
+                        procurement contracts occur through the eContract Management module and include the following
+                        processes:</span></li>
+            </ol>
+            <ol class="c6 lst-kix_list_5-0 start" start="1">
+                <li class="c47 c53 c54"><span class="c4">Modification of contract without impact on the total value of
+                        the contract &ndash; making amendments. Process for making modifications to the contract not
+                        affecting its value;</span></li>
+                <li class="c47 c53 c54"><span class="c4">modification with impact on the value of the contract &ndash;
+                        extensions. Process making modifications to the contract that affect the contract budget and
+                        will include the registration of these modifications with the Regional Treasury, if applicable;</span></li>
+                <li class="c47 c53 c54"><span class="c4">evaluation of contract progress &ndash; for goods and
+                        services. Process for reviewing the contract performance and the implementation status of
+                        procurement of goods and services;</span></li>
+                <li class="c47 c53 c54"><span class="c4">evaluation of contract progress &ndash; for works. Process for
+                        reviewing the contract performance and the implementation status of work procurement;</span></li>
+                <li class="c47 c53 c54"><span class="c4">creation and modification of contract payment schedule: The
+                        contracting authority will create and administer a payment schedule for each contract, and link
+                        it to milestones/deliverables for goods, services and works purchased. The workflow shall also
+                        allow modification of the payment schedule during the contract validity;</span></li>
+                <li class="c47 c53 c54"><span class="c4">issuing and acceptance of invoices: By integrating the
+                        electronic services (eFactura) and other information systems, the &ldquo;MTender&rdquo; system
+                        will allow the issuance and acceptance of invoices. The process must also be linked to the
+                        evaluation of project progress and the payment schedule;</span></li>
+                <li class="c47 c53 c54"><span class="c4">processing of payments: The Regional Treasury is responsible
+                        for executing payments requested by the Contracting Authority. In this context, by
+                        communicating with the Regional Treasury information systems, the &ldquo;MTender&ldquo; system
+                        must receive and register the data regarding payments made by the Regional Treasury under the
+                        contract;</span></li>
+                <li class="c47 c53 c54"><span class="c4">managing of eOrdering: The eContract Management module will
+                        provide the eOrdering functionalities, through which the contracting authorities will be able
+                        to issue purchase/ supply orders under signed contracts. </span></li>
+            </ol>
+            <p class="c0 c1"><span class="c4"></span></p>
+            <p class="c0 c1"><span class="c4"></span></p>
+            <h1 class="c34" id="h.tyjcwt"><span class="c15">1.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Public
+                    procurement procedures and techniques coverage</span></h1>
+            <p class="c0"><span class="c4">This section describes the public procurement procedures covered by the
+                    MTender system, as implemented during the MTender pilot.</span></p>
+            <ol class="c6 lst-kix_list_2-1" start="2">
+                <li class="c11">
+                    <h2 id="h.3dy6vkm" style="display:inline"><span class="c45">Request for quotation</span></h2>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">Request for Quotation (RFQ) is used for small value purchases. This process
+                    consists of the contracting authority defining a need for procurement and setting the technical
+                    specifications of the product/service/work needed and the potential economic operators placing a
+                    price quotation for the provision of the contract.</span></p>
+            <p class="c0"><span class="c4">Through this procedure, each economic operator from which a quotation is
+                    requested shall be informed whether any elements other than the charges for the subject matter of
+                    the procurement itself, such as any applicable transportation and insurance charges, customs duties
+                    and taxes, are to be included in the price. </span></p>
+            <p class="c0"><span class="c4">Each economic operator is permitted to give only one price quotation and is
+                    not permitted to change its quotation. No negotiations shall take place between the contracting
+                    authority and an economic operator with respect to a quotation presented by the economic operator.
+                </span></p>
+            <p class="c0"><span class="c4">The successful quotation shall be the lowest-priced quotation meeting the
+                    needs of the contracting authority as set out in the request for quotations.</span></p>
+            <p class="c0"><span class="c4">This process has to be implemented with two variants in the MTender system,
+                    as defined in Article 55 of PPL no. 131:</span></p>
+            <ul class="c6 lst-kix_list_1-0">
+                <li class="c20"><span class="c4">RFQ with mandatory electronic reverse auction used for low value
+                        purchases of goods and services;</span></li>
+                <li class="c20"><span class="c4">RFQ with optional electronic reverse auction used for low value
+                        purchases of works.</span></li>
+            </ul>
+            <ol class="c6 lst-kix_list_2-1 start" start="1">
+                <li class="c11">
+                    <h2 id="h.1t3h5sf" style="display:inline"><span class="c45">Open tender </span></h2>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">The Open tender process consists of the publicly advertisement of the public
+                    procurement process and the possibility by any economic operator of submitting their bids. The
+                    evaluation process shall be transparent and must guarantee the fair treatment of all bidders.</span></p>
+            <p class="c0"><span class="c4">This process has been implemented in Moldova with the following two
+                    variants:</span></p>
+            <ul class="c6 lst-kix_list_1-0">
+                <li class="c20"><span class="c4">Open Tender with electronic reverse auction used for low value
+                        purchases of goods and services;</span></li>
+                <li class="c20"><span class="c4">Open Tender without electronic reverse auction used for low value
+                        purchases of works.</span></li>
+            </ul>
+            <p class="c0"><span class="c4">Additionally, an additional feature of the open tender is the possibility of
+                    aggregating the demand, consolidating the acquisition of several products or services within the
+                    same tendering process.</span></p>
+            <ol class="c6 lst-kix_list_2-1" start="2">
+                <li class="c11">
+                    <h2 id="h.4d34og8" style="display:inline"><span>Restricted tender &ndash; </span><span class="c18 c50">not
+                            currently implemented by MTender</span></h2>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">Restricted procedures are based on a two-stage process where only those
+                    economic operators who have been qualified and/or shortlisted may submit tenders. The qualification
+                    and shortlisting of economic operators will be facilitated through the eQualification module. The
+                    eQualification module will offer automated prequalification of economic operators based on the ESPD
+                    Part I-IV and qualitative selection of qualified economic operators in accordance to selection
+                    criteria specified in the ESPD Part V. </span></p>
+            <p class="c0"><span class="c4">As a first step, the qualification requirements are set out in a contract
+                    notice and expressions of interest are invited from potential bidders. Based on received
+                    expressions of interest, interested economic operators are qualified or preselected, to form a
+                    ranking of best qualified to be invited to bid for the contract.</span></p>
+            <p class="c0"><span class="c4">The second step involves an invitation to tender being sent only to
+                    pre-qualified or pre-selected bidders as having the requisite level of professional, technical and
+                    financial expertise and capacity. </span></p>
+            <p class="c0"><span class="c4">The qualification requirements cover eligibility and general qualification
+                    requirements (minimum qualification requirements) and the selection criteria are specified in
+                    respect to the nature of the procurement contract. For example, the selection criteria may address
+                    the capacity of the economic operator to fulfil tender specifications, including technical and
+                    management competence, financial viability, relevant skills, experience and availability or key
+                    personnel.</span></p>
+            <p class="c0"><span class="c4">This procurement procedure is not currently covered by the MTender pilot
+                    system. It will be available by the first semester of 2020.</span></p>
+            <ol class="c6 lst-kix_list_2-1" start="3">
+                <li class="c11">
+                    <h2 id="h.2s8eyo1" style="display:inline"><span class="c45">Framework agreements &ndash; not
+                            currently implemented by MTender</span></h2>
+                </li>
+            </ol>
+            <p class="c0"><span>A framework agreement is an agreement between one or more contracting authorities and
+                    one or more economic operators, the purpose of which is to establish the terms governing contracts
+                    to be awarded during a given time limit, in particular with regard to price and, where appropriate,
+                    the quantity envisaged</span><sup class="c10"><a href="#ftnt2" id="ftnt_ref2">[2]</a></sup><span
+                    class="c4">. The contracting authorities use and uses one of the standard procurement procedures
+                    (open, restricted, negotiated, etc.) for the conclusion of framework agreements. Consequently, the
+                    normal rules, in particular concerning publicity, time limits, criteria for exclusion, selection
+                    and award, apply. </span></p>
+            <p class="c0"><span>The system will allow to conduct four different types of framework agreement
+                    procedures, in accordance to UNCITRAL Model Law</span><sup class="c10"><a href="#ftnt3" id="ftnt_ref3">[3]</a></sup><span
+                    class="c4">. The four types of framework agreements arise from the two different dimensions of two
+                    axis:</span></p>
+            <ul class="c6 lst-kix_list_1-0">
+                <li class="c20"><span class="c4">Open or Closed, based on whether it allows the incorporation of new
+                        suppliers during the period of execution of the framework:</span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_3-0 start">
+                <li class="c47 c36"><span class="c5">Closed framework agreement: </span><span class="c4">it means a
+                        framework agreement to which no supplier or contractor that is not initially a party to the
+                        framework agreement may subsequently become a party; </span></li>
+                <li class="c47 c36"><span class="c5">Open framework agreement: </span><span class="c4">it means a
+                        framework agreement to which a supplier (or suppliers) or a contractor (or contractors) in
+                        addition to the initial parties may subsequently become a party or parties.</span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_1-0">
+                <li class="c20"><span class="c4">With or without second stage competition for selecting the supplier
+                        involved in the provision of the service:</span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_3-0">
+                <li class="c36 c47"><span class="c5">Framework agreement procedure with second-stage competition</span><span
+                        class="c4">, (second-stage competitions are also called call-offs or mini-competition):</span><span
+                        class="c5">&nbsp;</span><span class="c4">it means a procedure under an open framework agreement
+                        or a closed framework agreement with more than one supplier or contractor in which certain
+                        terms and conditions of the procurement that cannot be established with sufficient precision
+                        when the framework agreement is concluded are to be established or refined through a
+                        second-stage competition; </span></li>
+                <li class="c47 c36"><span class="c5">Framework agreement procedure without second-stage competition</span><span
+                        class="c4">:</span><span class="c5">&nbsp;</span><span class="c4">it means a procedure under a
+                        closed framework agreement in which all terms and conditions of the procurement are established
+                        when the framework agreement is concluded.</span></li>
+            </ul>
+            <p class="c0"><span class="c4">This procurement procedure is not currently covered by the MTender pilot
+                    system. It will be available by the first semester of 2020.</span></p>
+            <p class="c0 c1"><span class="c4"></span></p>
+            <h1 class="c34"><span class="c15">1.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Procurement methods
+                    covered</span></h1>
+            <p class="c0"><span class="c4">This section provides a complete overview of all the procurement methods
+                    that covered under this eProcurement system architecture. A general overview of the workflows is
+                    provided within this section. The complete BPMN for the procurement methods prescribed shall be
+                    accessed through the links indicated in the following subsections.</span></p>
+            <ul class="c6 lst-kix_list_10-0 start">
+                <li class="c13"><span class="c4">Single-stage competitive procedures (parallel and sequential)</span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_10-1 start">
+                <li class="c9"><span class="c4">Small value procedure (simplified open tender)</span></li>
+                <li class="c9"><span class="c4">Micro value procedure based on electronic reverse auction</span></li>
+                <li class="c28"><span class="c4">EU GPA Open Tender</span></li>
+                <li class="c9"><span class="c4">Price Quotation without eCatalogue</span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_10-0">
+                <li class="c13"><span class="c4">Single-stage non-competitive procedures </span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_10-1 start">
+                <li class="c9"><span class="c4">Negotiated procedures</span></li>
+                <li class="c9"><span class="c4">Direct awards</span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_10-0">
+                <li class="c13"><span class="c4">Multi-stage competitive procedures</span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_10-1 start">
+                <li class="c28"><span class="c4">Restricted Tender</span></li>
+                <li class="c28"><span class="c4">Design Contest</span></li>
+                <li class="c28"><span class="c4">Competitive Dialog</span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_10-0">
+                <li class="c13"><span class="c4">Multi-stage repetitive competitive procedures</span></li>
+            </ul>
+            <ul class="c6 lst-kix_list_10-1 start">
+                <li class="c28"><span class="c4">Framework Agreement / Multiple suppliers with direct call offs</span></li>
+                <li class="c28"><span class="c4">Framework Agreement / Multiple suppliers with mini-competitions for
+                        call-offs</span></li>
+                <li class="c28"><span class="c4">Framework Agreement / Multiple suppliers with mini-competitions</span></li>
+                <li class="c28"><span class="c4">Dynamic Purchasing System</span></li>
+            </ul>
+            <p class="c0 c1"><span class="c4"></span></p>
+            <ol class="c6 lst-kix_list_12-2" start="3">
+                <li class="c47 c49">
+                    <h3 id="h.3rdcrjn" style="display:inline"><span class="c46">Single-stage competitive procedure
+                        </span></h3>
+                </li>
+            </ol>
+            <ul class="c6 lst-kix_list_10-0">
+                <li class="c13"><span class="c4">Small value procedure (simplified open tender)</span></li>
+                <li class="c13"><span class="c4">EU GPA Open Tender</span></li>
+                <li class="c13"><span class="c4">Price Quotation without eCatalogue</span></li>
+            </ul><a id="t.56472e841ba4506a76a60018b402186fa667913c"></a><a id="t.1"></a>
+            <table class="c55">
+                <tbody>
+                    <tr class="c25">
+                        <td class="c38" colspan="1" rowspan="1">
+                            <p class="c59"><span class="c43">&quot;procurementMethod&quot;</span><span class="c23">:
+                                </span><span class="c8">&quot;open&quot;</span><span class="c23"><br></span><span class="c43">&quot;procurementMethodDetails&quot;</span><span
+                                    class="c23">: </span><span class="c8">&quot;microValue&quot;</span><span class="c23">,
+                                </span><span class="c8">&quot;smallValue&quot;</span><span class="c23">, </span><span
+                                    class="c8">&quot;rfq&quot;, &quot;openTender&quot; </span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ol class="c6 lst-kix_list_2-4" start="8">
+                <li class="c22">
+                    <h5 id="h.26in1rg" style="display:inline"><span class="c30 c56">Sequential Type</span></h5>
+                </li>
+            </ol>
+            <p class="c12"><span class="c4">The procurement process is carried out in the following sequence:</span></p>
+            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.51px; height: 160.00px;"><img
+                        alt="" src="images/image9.png" style="width: 603.51px; height: 160.00px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span><span class="c14">Business Process Diagram (go to </span><span class="c14 c27"><a
+                        class="c19" href="https://www.google.com/url?q=http://bit.ly/2J13Vf6&amp;sa=D&amp;ust=1583229043770000">http://bit.ly/2J13Vf6</a></span><span
+                    class="c39 c14">)</span></p>
+            <ol class="c6 lst-kix_list_2-4" start="9">
+                <li class="c22">
+                    <h5 id="h.lnxbz9" style="display:inline"><span class="c30 c56">Parallel Type</span></h5>
+                </li>
+            </ol>
+            <p class="c12"><span class="c4">The procurement process is carried out in the following sequence:</span></p>
+            <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.51px; height: 168.00px;"><img
+                        alt="" src="images/image12.png" style="width: 603.51px; height: 168.00px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c7"><span class="c14">Business Process Diagram (go to </span><span class="c27 c14"><a class="c19"
+                        href="https://www.google.com/url?q=http://bit.ly/2Y5Hclj&amp;sa=D&amp;ust=1583229043771000">http://bit.ly/2Y5Hclj</a></span><span
+                    class="c14">)</span></p>
+            <ol class="c6 lst-kix_list_12-2" start="4">
+                <li class="c21">
+                    <h3 id="h.35nkun2" style="display:inline"><span class="c46">Single-stage non-competitive procedure</span></h3>
+                </li>
+            </ol>
+            <ul class="c6 lst-kix_list_10-0">
+                <li class="c13"><span class="c4">Negotiated procedures</span></li>
+                <li class="c13"><span class="c4">Direct awards</span></li>
+            </ul><a id="t.6085e9e9ceb00539c6fd843bbac8a3f9522738b9"></a><a id="t.2"></a>
+            <table class="c55">
+                <tbody>
+                    <tr class="c25">
+                        <td class="c60" colspan="1" rowspan="1">
+                            <p class="c59"><span class="c23">&ldquo;procurementMethod&rdquo;: </span><span class="c8">&quot;selective&quot;</span><span
+                                    class="c23"><br>&ldquo;procurementMethodDetails&rdquo;: </span><span class="c8">&quot;negotiatedProcedure&quot;</span><span
+                                    class="c23">, </span><span class="c8">&quot;directAward&quot;</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="c40"><span class="c4">The procurement process is carried out in the following sequence:</span></p>
+            <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.51px; height: 312.00px;"><img
+                        alt="" src="images/image11.png" style="width: 603.51px; height: 312.00px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c7"><span class="c14">Business Process Diagram (go to </span><span class="c27 c14"><a class="c19"
+                        href="https://www.google.com/url?q=http://bit.ly/2ZWVwOR&amp;sa=D&amp;ust=1583229043773000">http://bit.ly/2ZWVwOR</a></span><span
+                    class="c39 c14">)</span></p>
+            <p class="c0 c1"><span class="c4"></span></p>
+            <ol class="c6 lst-kix_list_12-2" start="5">
+                <li class="c21">
+                    <h3 id="h.1ksv4uv" style="display:inline"><span class="c46">Multi-stage competitive procedures</span></h3>
+                </li>
+            </ol>
+            <ul class="c6 lst-kix_list_10-0">
+                <li class="c13"><span class="c4">Restricted Tender</span></li>
+                <li class="c13"><span class="c4">Design Contest</span></li>
+                <li class="c13"><span class="c4">Competitive Dialog</span></li>
+            </ul><a id="t.d541a145fcfa84158863cfa59d8e83eec404889f"></a><a id="t.3"></a>
+            <table class="c55">
+                <tbody>
+                    <tr class="c25">
+                        <td class="c38" colspan="1" rowspan="1">
+                            <p class="c59"><span class="c43">&quot;procurementMethod&quot;</span><span class="c23">:
+                                </span><span class="c8">&quot;open&quot;</span><span class="c23"><br></span><span class="c43">&quot;procurementMethodDetails&quot;</span><span
+                                    class="c23">: </span><span class="c8">&quot;restrictedTender&quot;</span><span
+                                    class="c23">, </span><span class="c8">&quot;designContest&quot;</span><span class="c23">,
+                                </span><span class="c8">&quot;competitiveDialog&quot; </span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="c42"><span class="c2">The procurement process is carried out in the following sequence:</span></p>
+            <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.51px; height: 133.33px;"><img
+                        alt="" src="images/image15.png" style="width: 603.51px; height: 133.33px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c7" id="h.44sinio"><span class="c14">Business Process Diagram (go to </span><span class="c27 c14"><a
+                        class="c19" href="https://www.google.com/url?q=http://bit.ly/2ZZqJB9&amp;sa=D&amp;ust=1583229043774000">http://bit.ly/2ZZqJB9</a></span><span
+                    class="c39 c14">)</span></p>
+            <hr style="page-break-before:always;display:none;">
+            <p class="c7 c1"><span class="c39 c14"></span></p>
+            <ol class="c6 lst-kix_list_12-2" start="6">
+                <li class="c21">
+                    <h3 id="h.2jxsxqh" style="display:inline"><span class="c46">Multi-stage repetitive procedures</span></h3>
+                </li>
+            </ol>
+            <p class="c70"><span class="c4">Multi-stage repetitive procedure - Framework agreements set out the general
+                    terms under which specific purchases (&ldquo;call offs&rdquo;) can be made under the agreement. The
+                    purpose of using a framework is to enable contracting authorities to award individual contracts
+                    without going through a full EU procurement process each time. &nbsp;</span></p><a id="t.63d5efd7fff2452b14f11967d8a2a5f8c93eed03"></a><a
+                id="t.4"></a>
+            <table class="c55">
+                <tbody>
+                    <tr class="c25">
+                        <td class="c38" colspan="1" rowspan="1">
+                            <p class="c59"><span class="c43">&quot;procurementMethod&quot;</span><span class="c23">:
+                                </span><span class="c8">&quot;open&quot;</span><span class="c23"><br></span><span class="c43">&quot;procurementMethodDetails&quot;</span><span
+                                    class="c23">: </span><span class="c8">&quot;frameworkAgreement&quot;</span><span
+                                    class="c23">, </span><span class="c8">&quot;dynamicPurchasingSystem&quot; </span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="c40"><span class="c4">The procurement process is splitted into (at least) two stages: </span></p>
+            <ol class="c6 lst-kix_list_9-0 start" start="1">
+                <li class="c13"><span class="c4">Framework establishment</span></li>
+                <li class="c13"><span class="c4">Framework execution </span></li>
+            </ol>
+            <ol class="c6 lst-kix_list_2-4 start" start="1">
+                <li class="c22">
+                    <h5 id="h.z337ya" style="display:inline"><span class="c30 c56">Establishment </span></h5>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">Part for isolated establishment (focused only on selection of participants
+                    for FA execution) is carried out in the following sequence:</span></p>
+            <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.51px; height: 193.33px;"><img
+                        alt="" src="images/image14.png" style="width: 603.51px; height: 193.33px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c7"><span class="c14">Business Process Diagram (go to </span><span class="c27 c14"><a class="c19"
+                        href="https://www.google.com/url?q=https://bit.ly/2Vz3afM&amp;sa=D&amp;ust=1583229043776000">https://bit.ly/2Vz3afM</a></span><span
+                    class="c39 c14">)</span></p>
+            <ol class="c6 lst-kix_list_2-4" start="2">
+                <li class="c22">
+                    <h5 id="h.3j2qqm3" style="display:inline"><span class="c30 c56">Execution</span></h5>
+                </li>
+            </ol>
+            <p class="c0"><span class="c4">A framework agreement may be established with one provider (&ldquo;single
+                    sulier frameworks&rdquo;) or with more than one (&ldquo;multiple suppliers frameworks&rdquo;).
+                    &nbsp;Therefore there are four combinations of process available: </span></p>
+            <ul class="c6 lst-kix_list_10-0">
+                <li class="c17"><span class="c4">Framework Agreement / Single supplier with direct call-offs</span></li>
+                <li class="c17"><span class="c4">Framework Agreement / Multiple suppliers with direct call offs</span></li>
+                <li class="c17"><span class="c4">Framework Agreement / Multiple suppliers with mini-competitions for
+                        call-offs</span></li>
+                <li class="c17"><span class="c4">Framework Agreement / Multiple suppliers with second-stage
+                        competitions</span></li>
+            </ul>
+            <p class="c0"><span class="c4">As shown above, where the framework is a multiple suppliers framework, the
+                    contracting authority has several options when awarding call off contracts:</span></p>
+            <ul class="c6 lst-kix_list_11-0 start">
+                <li class="c13"><span class="c4">Where the terms of the framework are sufficiently precise to cover the
+                        particular call off, the contract may be awarded without reopening competition (i.e. a
+                        &ldquo;direct call off&rdquo;). </span></li>
+                <li class="c13"><span class="c4">Where the terms laid down in the framework are not precise enough or
+                        complete for the particular call off, a further competition (i.e. a &ldquo;mini
+                        competition&rdquo;) should be held with all those suppliers within the frameworks capable of
+                        meeting the particular need.</span></li>
+                <li class="c13"><span class="c4">In addition, there is a third option of calling off a contract via a
+                        combination of both direct award and mini-competition routes. </span></li>
+            </ul>
+            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.51px; height: 280.00px;"><img
+                        alt="" src="images/image17.png" style="width: 603.51px; height: 280.00px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span><span class="c14">Business Process Diagram (go to </span><span class="c27 c14"><a
+                        class="c19" href="https://www.google.com/url?q=http://bit.ly/2Gqbloo&amp;sa=D&amp;ust=1583229043777000">http://bit.ly/2Gqbloo</a></span><span
+                    class="c14">)</span></p>
+            <p class="c0"><span class="c4">Therefore, depending on CAs strategy as well as the value of the purchase
+                    from FA, execution part is carried out in accordance to one of the following sequences</span></p>
+            <p class="c31" id="h.1y810tw"><span class="c29">Direct award</span></p>
+            <p class="c0"><span class="c4">As set out above, where the terms of the framework are sufficiently precise
+                    to cover the particular call off, a direct call off may be made. If the framework agreement sets
+                    out all the terms governing the provision of the works, services and/or supplies concerned and all
+                    the objective conditions that are required to make a decision for award of the specific contract,
+                    then awarding the contract without reopening competition amongst the parties to the framework
+                    agreement is possible. In this instance, the choice of provider must be based on the objective
+                    criteria laid out in the procurement docs.</span></p>
+            <p class="c61"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.51px; height: 278.67px;"><img
+                        alt="" src="images/image16.png" style="width: 603.51px; height: 278.67px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c7"><span class="c14">Business Process Diagram (go to </span><span class="c27 c14"><a class="c19"
+                        href="https://www.google.com/url?q=http://bit.ly/2UotAiY&amp;sa=D&amp;ust=1583229043778000">http://bit.ly/2UotAiY</a></span><span
+                    class="c14 c39">)</span></p>
+            <p class="c31" id="h.4i7ojhp"><span class="c29">Request for Price Quotation</span></p>
+            <p class="c0"><span class="c4">Where the terms laid down in the framework agreement are not precise or
+                    complete enough for the particular call off, a mini competition should be held with all those
+                    suppliers within the framework arrangements capable of meeting the particular need. This does not
+                    mean that basic terms can be renegotiated or that the specification used in setting up the
+                    framework can be substantively changed. Basic terms can be refined or supplemented to reflect
+                    particular circumstances that apply to the call off where these were not and could not be provided
+                    for when the framework agreement was established. </span></p>
+            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.51px; height: 253.33px;"><img
+                        alt="" src="images/image19.png" style="width: 603.51px; height: 253.33px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span><span class="c14">Business Process Diagram (go to </span><span class="c27 c14"><a
+                        class="c19" href="https://www.google.com/url?q=http://bit.ly/2XuJFFP&amp;sa=D&amp;ust=1583229043779000">http://bit.ly/2XuJFFP</a></span><span
+                    class="c39 c14">)</span></p>
+            <hr style="page-break-before:always;display:none;">
+            <p class="c1 c31" id="h.2xcytpi"><span class="c29"></span></p>
+            <p class="c31" id="h.1ci93xb"><span class="c29">Second-stage competition</span></p>
+            <p class="c0"><span class="c4">Combination of direct award and mini-competition can be can be used provided
+                    that: </span></p>
+            <ul class="c6 lst-kix_list_8-0 start">
+                <li class="c13"><span class="c4">the procurement documents state that this route may be used</span></li>
+                <li class="c13"><span class="c4">the framework sets out all the necessary terms governing provision of
+                        the work/supply/service being procured</span></li>
+                <li class="c13"><span class="c4">objective criteria are set out in the procurement documents for the
+                        framework agreement and are applied to determine whether a particular call off is directly
+                        awarded or goes on to a mini- competition</span></li>
+                <li class="c13"><span class="c4">the procurement documents specify which terms may be subject to the
+                        reopening of competition. The guidance gives this example.</span></li>
+            </ul>
+            <p class="c7"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.51px; height: 217.33px;"><img
+                        alt="" src="images/image18.png" style="width: 603.51px; height: 217.33px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span><span class="c14">Business Process Diagram (go to </span><span class="c27 c14"><a
+                        class="c19" href="https://www.google.com/url?q=http://bit.ly/2Vf988A&amp;sa=D&amp;ust=1583229043779000">http://bit.ly/2Vf988A</a></span><span
+                    class="c14">)</span></p>
+            <hr style="page-break-before:always;display:none;">
+            <p class="c0 c1"><span class="c4"></span></p>
+            <p class="c0 c1"><span class="c4"></span></p>
+            <p class="c0 c1"><span class="c4 c71"></span></p>
+            <div>
+                <p class="c7 c1"><span class="c14 c65"></span></p>
+                <p class="c33 c1"><span class="c4"></span></p>
+            </div>
+            <hr class="c58">
+            <div>
+                <p class="c47 c53"><a href="#ftnt_ref1" id="ftnt1">[1]</a><span class="c72 c56">&nbsp;For further
+                        references see: </span><span class="c27 c56 c63"><a class="c19" href="https://www.google.com/url?q=http://standard.open-contracting.org/latest/en/&amp;sa=D&amp;ust=1583229043780000">http://standard.open-contracting.org/latest/en/</a></span><span
+                        class="c56 c72">&nbsp;</span></p>
+            </div>
+            <div>
+                <p class="c33"><a href="#ftnt_ref2" id="ftnt2">[2]</a><span class="c24">&nbsp;Additional information on
+                        Framework Agreements: </span><span class="c27 c44"><a class="c19" href="https://www.google.com/url?q=https://www.oecd-ilibrary.org/docserver/5js4vmnmnhf7-en.pdf?expires%3D1564147101%26id%3Did%26accname%3Dguest%26checksum%3D0BCB80EF1618D4539CC98BAE118BD267&amp;sa=D&amp;ust=1583229043780000">https://www.oecd-ilibrary.org/docserver/5js4vmnmnhf7-en.pdf?expires=1564147101&amp;id=id&amp;accname=guest&amp;checksum=0BCB80EF1618D4539CC98BAE118BD267</a></span></p>
+            </div>
+            <div>
+                <p class="c33"><a href="#ftnt_ref3" id="ftnt3">[3]</a><span class="c24">&nbsp;UNCTIRAL Model Law (2011)
+                        http://www.uncitral.org/pdf/english/texts/procurem/ml-procurement-2011/2011-Model-Law-on-Public-Procurement-e.pdf</span></p>
+            </div>
+
             <hr>
         </div>
         <script>
