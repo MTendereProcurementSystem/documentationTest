@@ -114,18 +114,513 @@ permalink: /developmentPrinciples/
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
         <div class="main">
-            <h2 class="c236 c56" id="h.8sqtv5qmy3t8"><span>TITLE</span></h2>
+
+
+            <h1 class="c45 c51" id="h.gjdgxs"><span class="c7">Design and development principles</span></h1>
+            <hr>
+            <p class="c12 c17"><span class="c0"></span></p>
+            <p class="c12"><span class="c0">This section describes the design and development methodologies followed
+                    for the
+                    architecture definition of the OCDS Open Source Central Unit of the electronic public procurement
+                    system. The
+                    general approach on design of architecture for the eProcurement system involves the Service
+                    Oriented
+                    Architecture (SOA) and Exploratory Data Analysis (EDA) architecture. These two approaches combined
+                    provide a
+                    richer, more robust model by leveraging previously unknown causal relationships in order to build a
+                    new event
+                    pattern. This new business intelligence pattern triggers further automated processing that adds
+                    exponential
+                    value to the enterprise by injecting value-added information into the recognized pattern which
+                    could not have
+                    been previously achieved. </span></p>
+            <h2 class="c27" id="h.30j0zll"><span class="c26 c31">Architectural approach</span></h2>
+            <p class="c12"><span class="c0">Event-driven SOA that combines the intelligence and proactiveness of EDA
+                    with the
+                    organizational capabilities found in service offerings.</span></p>
+            <h3 class="c5" id="h.1fob9te"><span class="c39">Service-oriented architecture </span></h3>
+            <p class="c12"><span class="c0">SOA is a style of software design where services are provided to the other
+                    components
+                    by application components, through a communication protocol over a network. The basic principles of
+                    service-oriented architecture are independent of vendors, products and technologies. A service is a
+                    discrete
+                    unit of functionality that can be accessed remotely and acted upon and updated independently, such
+                    as
+                    retrieving a credit card statement online.</span></p>
+            <h3 class="c5" id="h.3znysh7"><span class="c39">Event-driven architecture</span></h3>
+            <p class="c12"><span class="c0">EDA, is a software architecture pattern promoting the production,
+                    detection,
+                    consumption of, and reaction to events. From a formal perspective, what is produced, published,
+                    propagated,
+                    detected or consumed is a (typically asynchronous) message called the event notification, and not
+                    the event
+                    itself, which is the state change that triggered the message emission. Events do not travel, they
+                    just occur.
+                    However, the term event is often used metonymically to denote the notification message itself,
+                    which may lead
+                    to some confusion. Building systems around an event-driven architecture simplifies horizontal
+                    scalability in
+                    distributed computing models and makes them more resilient to failure. This is because an
+                    application state can
+                    be copied across multiple parallel snapshots for high-availability. New events can be initiated
+                    anywhere, but
+                    more importantly propagated across the network of data stores updating each as they arrive. Adding
+                    extra nodes
+                    becomes easier &nbsp;as well as you can simply take a copy of the application state, feed it a
+                    stream of events
+                    and run with it. Event-driven architecture can complement SOA because services can be activated by
+                    triggers
+                    fired on incoming events. This paradigm is particularly useful whenever the sink does not provide
+                    any
+                    self-contained executive</span></p>
+            <h3 class="c5" id="h.2et92p0"><span class="c39">CQRS architecture style: command-query separation</span></h3>
+            <p class="c12"><span class="c0">In traditional architectures, the same data model is used to query and
+                    update a
+                    database. That&#39;s simple and works well for basic CRUD operations. In more complex applications,
+                    however,
+                    this approach can become unwieldy. For example, on the read side, the application may perform many
+                    different
+                    queries, returning data transfer objects (Data Transfer Objects or DTOs) with different shapes.
+                </span></p>
+            <p class="c12"><span class="c0">Object mapping can become complicated. On the write side, the model may
+                    implement
+                    complex validation and business logic. As a result, you can end up with an overly complex model
+                    that does too
+                    much. Another potential problem is that read and write workloads are often asymmetrical, with very
+                    different
+                    performance and scale requirements.</span></p>
+            <p class="c12"><span class="c0">Command and Query Responsibility Segregation (CQRS) is an architecture
+                    which addresses
+                    these problems by separating reads and writes into separate models, using commands to update data,
+                    and queries
+                    to read data.</span></p>
+            <ul class="c29 lst-kix_list_8-0 start">
+                <li class="c43 c45 c56"><span class="c0">Commands should be task based, rather than data centric.
+                        Commands may be
+                        placed on a queue for asynchronous processing, rather than being processed synchronously.</span></li>
+                <li class="c12 c43"><span class="c0">Queries never modify the database. A query returns a DTO that does
+                        not
+                        encapsulate any knowledge.</span></li>
+            </ul>
+            <p class="c12"><span class="c0">Compared to the single data model used in CRUD-based systems, the use of
+                    separate query
+                    and update models for the data in CQRS-based systems simplifies design and implementation.</span></p><a
+                id="t.196351170b0aaf55041f8db74eb167bbea238a3a"></a><a id="t.0"></a>
+            <table class="c52">
+                <tbody>
+                    <tr class="c41">
+                        <td class="c16" colspan="1" rowspan="1">
+                            <p class="c34"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 441.50px; height: 204.67px;"><img
+                                        alt="" src="images/image1.png" style="width: 441.50px; height: 204.67px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                            <p class="c34"><span class="c44">Figure 1. General scheme for CQRS-approach</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="c24 c17"><span class="c0"></span></p>
+            <p class="c12"><span class="c0">For greater isolation, the read and the write data could be physically
+                    separated. In
+                    that case, the read database can use its own data schema that is optimized for queries. </span></p>
+            <p class="c12"><span class="c0">For example, it can store a materialized view of the data, in order to
+                    avoid complex
+                    joins or mappings. It might even use a different type of data store. If separate read and write
+                    databases are
+                    used, they must be kept in sync. Typically this is accomplished by having the write model publish
+                    an event
+                    whenever it updates the DB. </span></p>
+            <h3 class="c5" id="h.tyjcwt"><span class="c39">Design by Contract: contract programming approach </span></h3>
+            <p class="c12"><span class="c0">Design by contract (DbC), also known as contract programming, programming
+                    by contract
+                    and design-by-contract programming, is an approach for designing software prescribes that software
+                    designers
+                    should define formal, precise and verifiable interface specifications for software components,
+                    which extend the
+                    ordinary definition of abstract data types with preconditions, postconditions and invariants. These
+                    specifications are referred to as &quot;contracts&quot;, in accordance with a conceptual metaphor
+                    with the
+                    conditions and obligations of business contracts. </span></p>
+            <p class="c12" id="h.3dy6vkm"><span class="c0">The DbC approach assumes all client components that invoke
+                    an operation
+                    on a server component will meet the preconditions specified as required for that operation. Where
+                    this
+                    assumption is considered too risky (as in multi-channel client-server or distributed computing) the
+                    opposite
+                    &quot;defensive design&quot; approach is taken, meaning that a server component tests (before or
+                    while
+                    processing a client&#39;s request) that all relevant preconditions hold true, and replies with a
+                    suitable error
+                    message if not.</span></p>
+            <h2 class="c27" id="h.1t3h5sf"><span class="c31 c26">Used Patterns </span></h2>
+            <h3 class="c5" id="h.4d34og8"><span class="c39">Materialized View pattern</span></h3>
+            <p class="c12"><span class="c0">Materialized views (MV) are used to generate pre-populated views of the
+                    data in one or
+                    more data stores when the data isn&#39;t ideally formatted for required query operations. This can
+                    help support
+                    efficient querying and data extraction, and improve application performance.</span></p>
+            <h4 class="c28" id="h.2s8eyo1"><span class="c19">Context and problem</span></h4>
+            <p class="c12"><span class="c0">When storing data, the priority for developers and data administrators is
+                    often focused
+                    on how the data is stored, as opposed to how it&#39;s read. The chosen storage format is usually
+                    closely
+                    related to the format of the data, requirements for managing data size and data integrity, and the
+                    kind of
+                    store in use. For example, when using NoSQL document store, the data is often represented as a
+                    series of
+                    aggregates, each containing all of the information for that entity. However, this can have a
+                    negative effect on
+                    queries. When a query only needs a subset of the data from some entities, such as a summary of
+                    orders for
+                    several customers without all of the order details, it must extract all of the data for the
+                    relevant entities
+                    in order to obtain the required information.</span></p>
+            <h4 class="c28" id="h.17dp8vu"><span class="c19">Solution</span></h4>
+            <p class="c11"><span class="c0">To support efficient querying, a common solution is to generate, in
+                    advance, a view
+                    that materializes the data in a format suited to the required results set. The MV pattern describes
+                    generating
+                    pre populated views of data in environments where the source data isn&#39;t in a suitable format
+                    for querying,
+                    where generating a suitable query is difficult, or where query performance is poor due to the
+                    nature of the
+                    data or the data store. These MVs, which only contain data required by a query, allow applications
+                    to quickly
+                    obtain the information they need. In addition to joining tables or combining data entities, MVs can
+                    include the
+                    current values of calculated columns or data items, the results of combining values or executing
+                    transformations on the data items, and values specified as part of the query. A MV can even be
+                    optimized for
+                    just a single query. A key point is that a MV and the data it contains is completely disposable
+                    because it can
+                    be entirely rebuilt from the source data stores. </span></p>
+            <p class="c11 c17"><span class="c3"></span></p><a id="t.179aa0689a0c25e02fe11e7294f21b9924bc4a75"></a><a id="t.1"></a>
+            <table class="c54">
+                <tbody>
+                    <tr class="c46">
+                        <td class="c9" colspan="1" rowspan="1">
+                            <p class="c34 c45"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 384.51px; height: 163.44px;"><img
+                                        alt="" src="images/image3.png" style="width: 384.51px; height: 163.44px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                            <p class="c34 c45 c17"><span class="c36"></span></p>
+                            <p class="c34 c45"><span class="c44">Figure 2a. General scheme of &ldquo;Materialized
+                                    View&rdquo;
+                                    pattern</span></p>
+                            <p class="c24 c17"><span class="c36"></span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="c11 c17"><span class="c0 c14"></span></p>
+            <p class="c11"><span class="c0">A materialized view is never updated directly by an application, and so
+                    it&#39;s a
+                    specialized cache.</span></p>
+            <p class="c11"><span class="c0">When the source data for the view changes, the view must be updated to
+                    include the new
+                    information. You can schedule this to happen automatically, or when the system detects a change to
+                    the original
+                    data. In some cases it might be necessary to regenerate the view manually. The figure shows an
+                    example of how
+                    the Materialized View pattern might be used.</span></p>
+            <h4 class="c28" id="h.ifqc18c48ysf"><span class="c19">How it works</span></h4>
+            <p class="c11"><span class="c0">The following figure shows an example of using the Materialized View
+                    pattern to
+                    generate a summary of sales. Data in the Order, OrderItem, and Customer tables in separate
+                    partitions in an
+                    Azure storage account are combined to generate a view containing the total sales value for each
+                    product in the
+                    Electronics category, along with a count of the number of customers who made purchases of each
+                    item.</span></p>
+            <p class="c38"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 597.50px; height: 255.08px;"><img
+                        alt="" src="images/image2.png" style="width: 597.50px; height: 255.08px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c45 c17 c47"><span class="c44"></span></p>
+            <p class="c47 c45"><span class="c44">Figure 2b. Tables and materialized view</span></p>
+            <p class="c17 c38"><span class="c0"></span></p>
+            <h3 class="c5" id="h.3rdcrjn"><span class="c39">Event Sourcing pattern</span></h3>
+            <p class="c12"><span class="c0">Instead of storing just the current state of the data in a domain, Event
+                    Sourcing uses
+                    an append-only store to record the full series of actions taken on that data. The store acts as the
+                    system of
+                    record and can be used to materialize the domain objects. This can simplify tasks in complex
+                    domains, by
+                    avoiding the need to synchronize the data model and the business domain, while improving
+                    performance,
+                    scalability, and responsiveness. It can also provide consistency for transactional data, and
+                    maintain full
+                    audit trails and history that can enable compensating actions.</span></p>
+            <h4 class="c28" id="h.26in1rg"><span class="c19">Context and problem</span></h4>
+            <p class="c12"><span class="c0">Most applications work with data, and the typical approach is for the
+                    application to
+                    maintain the current state of the data by updating it as users work with it. For example, in the
+                    traditional
+                    Create, Read, Update, and Delete (CRUD) model a typical data process is to read data from the
+                    store, make some
+                    modifications to it, and update the current state of the data with the new values&mdash;often by
+                    using
+                    transactions that lock the data. The CRUD approach has some limitations:</span></p>
+            <ul class="c29 lst-kix_list_15-0 start">
+                <li class="c15"><span class="c0">CRUD systems perform update operations directly against a data store,
+                        which can
+                        slow down performance and responsiveness, and limit scalability, due to the processing overhead
+                        it
+                        requires.</span></li>
+                <li class="c15"><span class="c0">In a collaborative domain with many concurrent users, data update
+                        conflicts are
+                        more likely because the update operations take place on a single item of data.</span></li>
+                <li class="c15"><span class="c0">Unless there&#39;s an additional auditing mechanism that records the
+                        details of
+                        each operation in a separate log, history is lost.</span></li>
+            </ul>
+            <h4 class="c28" id="h.lnxbz9"><span class="c19">Solution</span></h4>
+            <p class="c12"><span class="c0">The Event Sourcing pattern defines an approach to handling operations on
+                    data
+                    that&#39;s driven by a sequence of events, each of which is recorded in an append-only store.
+                    Application code
+                    sends a series of events that imperatively describe each action that has occurred on the data to
+                    the event
+                    store, where they&#39;re persisted. Each event represents a set of changes to the data. The events
+                    are
+                    persisted in an event store that acts as the system of record (the authoritative data source) about
+                    the current
+                    state of the data. The event store typically publishes these events so that consumers can be
+                    notified and can
+                    handle them if needed. Consumers could, for example, initiate tasks that apply the operations in
+                    the events to
+                    other systems, or perform any other associated action that&#39;s required to complete the
+                    operation. Notice
+                    that the application code that generates the events is decoupled from the systems that subscribe to
+                    the events.</span></p>
+            <p class="c12"><span class="c0">Typical uses of the events published by the event store are to maintain
+                    materialized
+                    views of entities as actions in the application change them, and for integration with external
+                    systems. For
+                    example, a system can maintain a materialized view of all customer orders that&#39;s used to
+                    populate parts of
+                    the UI. As the application adds new orders, adds or removes items on the order, and adds shipping
+                    information,
+                    the events that describe these changes can be handled and used to update the materialized view.</span></p>
+            <p class="c12"><span class="c0">In addition, at any point it&#39;s possible for applications to read the
+                    history of
+                    events, and use it to materialize the current state of an entity by playing back and consuming all
+                    the events
+                    related to that entity. This can occur on demand to materialize a domain object when handling a
+                    request, or
+                    through a scheduled task so that the state of the entity can be stored as a materialized view to
+                    support the
+                    presentation layer.</span></p>
+            <p class="c12"><span class="c0">The figure &#8470;3 below shows an overview of the pattern, including some
+                    of the
+                    options for using the event stream such as creating a materialized view, integrating events with
+                    external
+                    applications and systems, and replaying events to create projections of the current state of
+                    specific entities.</span></p>
+            <p class="c12"><span class="c0">The Event Sourcing pattern provides the following advantages:</span></p>
+            <ul class="c29 lst-kix_list_16-0 start">
+                <li class="c6"><span class="c0">Events are immutable and can be stored using an append-only operation.
+                        The user
+                        interface, workflow, or process that initiated an event can continue, and tasks that handle the
+                        events can
+                        run in the background. </span></li>
+                <li class="c6"><span class="c0">Events are simple objects that describe some action that occurred,
+                        together with
+                        any associated data required to describe the action represented by the event. Events don&#39;t
+                        directly
+                        update a data store. They&#39;re simply recorded for handling at the appropriate time. </span></li>
+                <li class="c6"><span class="c0">Events typically have meaning for a domain expert, whereas
+                        object-relational
+                        impedance mismatch can make complex database tables hard to understand. Tables are artificial
+                        constructs
+                        that represent the current state of the system, not the events that occurred.</span></li>
+                <li class="c6"><span class="c0">Event sourcing can help prevent concurrent updates from causing
+                        conflicts because
+                        it avoids the requirement to directly update objects in the data store.</span></li>
+                <li class="c6"><span class="c0">The append-only storage of events provides an audit trail that can be
+                        used to
+                        monitor actions taken against a data store, regenerate the current state as materialized views
+                        or
+                        projections by replaying the events at any time, and assist in testing and debugging the
+                        system. In
+                        addition, the requirement to use compensating events to cancel changes provides a history of
+                        changes that
+                        were reversed, which wouldn&#39;t be the case if the model simply stored the current state.
+                    </span></li>
+                <li class="c12 c58"><span class="c0">The event store raises events, and tasks perform operations in
+                        response to
+                        those events. This decoupling of the tasks from the events provides flexibility and
+                        extensibility. Tasks
+                        know about the type of event and the event data, but not about the operation that triggered the
+                        event. In
+                        addition, multiple tasks can handle each event. This enables easy integration with other
+                        services and
+                        systems that only listen for new events raised by the event store.</span></li>
+            </ul><a id="t.8c4b4b0e9bf4d5b6bcad881c2271f0fc391f23a7"></a><a id="t.2"></a>
+            <table class="c1">
+                <tbody>
+                    <tr class="c25">
+                        <td class="c20" colspan="1" rowspan="1">
+                            <p class="c34 c45"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 419.70px; height: 267.50px;"><img
+                                        alt="" src="images/image5.png" style="width: 419.70px; height: 267.50px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                            <p class="c34"><span class="c55">Figure 3. General scheme of &ldquo;Event sourcing&rdquo;
+                                    pattern</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="c24 c17"><span class="c3"></span></p>
+            <p class="c11 c17" id="h.35nkun2"><span class="c0"></span></p>
+            <h2 class="c45 c48" id="h.1ksv4uv"><span class="c31 c26">Technologies</span></h2>
+            <hr>
+            <p class="c11 c17" id="h.44sinio"><span class="c0"></span></p>
+            <p class="c11"><span class="c0">This section describes the development framework and technologies by the
+                    MTender
+                    system. the Technology choice has been performed according to the MTender principle of Open source,
+                    open data,
+                    open contracting data standard. The MTender CDU is based on open source applications and foster
+                    transparency
+                    and accountability of public procurement by incorporating open data and Advanced Open Contracting
+                    Data
+                    Standards. </span></p><a id="t.57cded6d8a309d3a1ba8b0e0060e434051a8ec94"></a><a id="t.3"></a>
+            <table class="c21">
+                <tbody>
+                    <tr class="c8">
+                        <td class="c10 c30" colspan="1" rowspan="1">
+                            <h4 class="c24 c37" id="h.wxfzduc3c0yl"><span class="c19">Spring Framework</span></h4>
+                        </td>
+                        <td class="c2" colspan="1" rowspan="2">
+                            <p class="c34 c17"><span class="c32"></span></p>
+                            <p class="c34"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 114.50px; height: 36.87px;"><img
+                                        alt="" src="images/image4.png" style="width: 114.50px; height: 36.87px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                    </tr>
+                    <tr class="c35">
+                        <td class="c10 c30" colspan="1" rowspan="1">
+                            <p class="c22"><span class="c0">The Spring Framework provides a comprehensive programming
+                                    and
+                                    configuration model for modern Java-based enterprise applications - on any kind of
+                                    deployment
+                                    platform. Spring focuses on the &quot;plumbing&quot; of enterprise applications so
+                                    that teams
+                                    can focus on application-level business logic, without unnecessary ties to specific
+                                    deployment
+                                    environments.</span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10" colspan="1" rowspan="1">
+                            <h4 class="c24 c37" id="h.2jxsxqh"><span class="c19">Kotlin</span></h4>
+                        </td>
+                        <td class="c13" colspan="1" rowspan="2">
+                            <p class="c23"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 147.82px; height: 41.00px;"><img
+                                        alt="" src="images/image7.png" style="width: 147.82px; height: 74.15px; margin-left: -0.00px; margin-top: -16.57px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10" colspan="1" rowspan="1">
+                            <p class="c22"><span class="c0">Kotlin is a statically typed programming language that runs
+                                    on the Java
+                                    virtual machine and also can be compiled to JavaScript source code or use the LLVM
+                                    compiler
+                                    infrastructure. </span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10 c30" colspan="1" rowspan="1">
+                            <h4 class="c24 c37" id="h.lmgimcpkbm3w"><span class="c19">Camunda</span></h4>
+                        </td>
+                        <td class="c2" colspan="1" rowspan="2">
+                            <p class="c17 c23"><span class="c32"></span></p>
+                            <p class="c34 c49"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 122.61px; height: 20.00px;"><img
+                                        alt="" src="images/image6.png" style="width: 113.45px; height: 20.00px; margin-left: 9.16px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10 c30" colspan="1" rowspan="1">
+                            <p class="c22"><span class="c0">Camunda is an open source platform for workflow and
+                                    business process
+                                    management. You can model and execute BPMN 2.0, CMMN 1.1 and DMN 1.1.</span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10" colspan="1" rowspan="1">
+                            <h4 class="c24 c37" id="h.z337ya"><span class="c19">Apache Kafka</span></h4>
+                        </td>
+                        <td class="c13" colspan="1" rowspan="2">
+                            <p class="c33 c17"><span class="c32"></span></p>
+                            <p class="c34"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 122.50px; height: 58.29px;"><img
+                                        alt="" src="images/image9.png" style="width: 133.89px; height: 68.62px; margin-left: -4.66px; margin-top: -5.90px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10" colspan="1" rowspan="1">
+                            <p class="c22"><span class="c0">Apache Kafka is an open-source stream processing platform
+                                    developed by
+                                    the Apache Software Foundation. The project aims to provide a unified,
+                                    high-throughput,
+                                    low-latency platform for handling real-time data feeds.</span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10 c30" colspan="1" rowspan="1">
+                            <h4 class="c24 c37" id="h.3j2qqm3"><span class="c19">Cassandra DB</span></h4>
+                        </td>
+                        <td class="c2" colspan="1" rowspan="2">
+                            <p class="c34 c17"><span class="c32"></span></p>
+                            <p class="c17 c33"><span class="c32"></span></p>
+                            <p class="c34"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 110.50px; height: 62.70px;"><img
+                                        alt="" src="images/image8.png" style="width: 110.50px; height: 111.06px; margin-left: -0.00px; margin-top: -24.62px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10 c30" colspan="1" rowspan="1">
+                            <p class="c22"><span class="c26">The Apache Cassandra is a database solution for
+                                    scalability and high
+                                    availability without compromising performance. Linear scalability and proven
+                                    fault-tolerance on
+                                    commodity hardware or cloud infrastructure make it the perfect platform for
+                                    mission-critical
+                                    data. </span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10" colspan="1" rowspan="1">
+                            <h4 class="c24 c37" id="h.1y810tw"><span class="c19">JSON Web Tokens </span></h4>
+                        </td>
+                        <td class="c13" colspan="1" rowspan="2">
+                            <p class="c17 c53"><span class="c32"></span></p>
+                            <p class="c34"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 116.50px; height: 46.60px;"><img
+                                        alt="" src="images/image10.png" style="width: 116.50px; height: 46.60px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                                        title=""></span></p>
+                        </td>
+                    </tr>
+                    <tr class="c8">
+                        <td class="c10" colspan="1" rowspan="1">
+                            <p class="c22"><span>JSON Web Token (JWT) is an open standard (</span><span class="c18"><a
+                                        class="c57" href="https://www.google.com/url?q=https://tools.ietf.org/html/rfc7519&amp;sa=D&amp;ust=1583338234620000">RFC
+                                        7519</a></span><span class="c0">) that defines a compact and self-contained way
+                                    for
+                                    securely transmitting information between parties as a JSON object. This
+                                    information can be
+                                    verified and trusted because it is digitally signed. </span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="c11 c17"><span class="c0"></span></p>
+            <div>
+                <p class="c11 c17"><span class="c0"></span></p>
+                <p class="c45 c17 c50"><span class="c4"></span></p>
+                <p class="c11 c17"><span class="c0"></span></p>
+                <p class="c11 c17"><span class="c0"></span></p>
+            </div>
+
+
             <hr>
 
         </div>
